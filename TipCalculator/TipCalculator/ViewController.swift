@@ -35,6 +35,7 @@ class ViewController: UIViewController {
     
     @IBAction func calculatedTax(_ sender: Any) {
         
+        gradientLoadingBar.fadeIn()
         // Get the inital bill amount
         let billTotal = Double(billField.text!) ?? 0
         
@@ -54,6 +55,8 @@ class ViewController: UIViewController {
         // Display the tip with a percentage sign
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+        gradientLoadingBar.fadeOut()
+        
         
     }
 }
